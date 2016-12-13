@@ -8,8 +8,6 @@ Full Stack JavaScript Single Page Application
 4. As an unauthenticated user, when I login I should not have to search again.
 
 
-##### [create-react-app**](https://github.com/facebookincubator/create-react-app)
-#### [YELP**](https://www.yelp.com/developers/documentation/v3)
-
-                            
-                            [Click here to check Procution Files](https://github.com/Chan11/n8lf)
+##### [create-react-app**](https://github.com/facebookincubator/create-react-app).
+##### [YELP**](https://www.yelp.com/developers/documentation/v3).
+##### [Click here to check Procution Files](https://github.com/Chan11/n8lf)
