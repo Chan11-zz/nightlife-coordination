@@ -10,7 +10,7 @@ export default {
     let id=crypt.generateHash(req.body.users.email);
     let email=req.body.users.email;
     handleMongo(db.findDoc, "users", { "email": email})
-       .then(function(response){
+       .then((response)=>{
           if(response!=null&&response.email==email) {
             res.json({email : "This email is already taken" });
           } else {

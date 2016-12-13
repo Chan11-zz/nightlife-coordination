@@ -4,9 +4,8 @@ var secret=process.env.YELP_SECRET;
 var yelp=new Yelp({ id:key , secret:secret });
 export default (term)=>{
     return new Promise((resolve,reject)=>{
-        console.log("in Yelp:",term);
         yelp.search(`term=Bar&location=${term}`)
-        .then(function(result){
+        .then((result)=>{
            resolve(result);
         })
         .catch((err)=>{

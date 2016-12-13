@@ -5,7 +5,6 @@ export default {
             return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
         },
     validPassword : (password,a)=>{
-            console.log(password,a);
             return bcrypt.compareSync(password,a);
     },
     setPassword : (password)=>{
