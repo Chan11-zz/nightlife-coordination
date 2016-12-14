@@ -65,31 +65,34 @@ class Main extends React.Component{
             });
         }
         return (
-            <div>
-          <Navigation />
-            <div className="mdl-layout mdl-js-layout">
-            <div id="searchComponent">
-              <div id="title-icons">
-              <i id="bar-icon" className="material-icons md-48">local_bar</i>
-              <i id="restaurant-icon" className="material-icons md-48">restaurant</i>
-              <i id="group-icon" className="material-icons md-48">group</i>
-              </div>
-            <h1 id="title">Night Life Coordination</h1>
-            <form onSubmit={this._handleSubmit}>
-            <div id="search-bar">
-          <input  type="text" onChange={this._handleChange}/>
-              </div>
-            <button id="search-button" className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                          Search
-                        </button>
-         </form>
-         </div>
-         <ul id="uldiv" style={{visibility:"visible"}}>
-         {data || this.state.search_term&&<img src="http://i.imgur.com/If9taov.gif" />}
-         </ul>
-         <div className="footer">desinged & coded by <a href="https://github.com/Chan11/" target="_blank">
-           <strong>Chandrahas</strong></a></div>
-            </div>
+          <div>
+        <Navigation />
+          <main id="page-content" className="mdl-layout__content">
+    <div >
+      <div id="searchComponent">
+        <div id="title-icons">
+        <i id="bar-icon" className="material-icons md-48">local_bar</i>
+        <i id="restaurant-icon" className="material-icons md-48">restaurant</i>
+        <i id="group-icon" className="material-icons md-48">group</i>
+        </div>
+      <h1 id="title">Night Life Coordination</h1>
+      <form onSubmit={this._handleSubmit}>
+      <div id="search-bar">
+    <input  type="text" onChange={this._handleChange}/>
+        </div>
+      <button id="search-button" className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Search
+                  </button>
+     </form>
+     </div>
+     <ul id="uldiv" style={{visibility:"visible"}}>
+     {data || this.state.search_term&&<img src="http://i.imgur.com/If9taov.gif" />}
+     </ul>
+     <div className="footer">desinged & coded by <a href="https://github.com/Chan11/" target="_blank">
+       <strong>Chandrahas</strong></a></div>
+
+     </div>
+    </main>
             </div>
             );
     }
