@@ -10,4 +10,4 @@ Full Stack JavaScript Single Page Application
 
 ##### [create-react-app**](https://github.com/facebookincubator/create-react-app).
 ##### [YELP**](https://www.yelp.com/developers/documentation/v3).
-##### [Click here to check Procution Files](https://github.com/Chan11/n8lf)
+##### [Click here to see Production Files](https://github.com/Chan11/n8lf)
