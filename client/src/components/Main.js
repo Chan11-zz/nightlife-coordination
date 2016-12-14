@@ -20,15 +20,12 @@ class Main extends React.Component{
     }
 
     componentWillMount(){
-        console.log("Main will mount",store.getUser());
         this.setState({
             results:store.getUser().events||[],
             peopleAttending:store.getUser().othersEvents||[]
         });
     }
     componentDidMount(){
-        console.log("Main mounted");
-
         if(store.getUser().isAuthenticated){
             store.getUser()._handleLogout=this._handleLogOut;
         }
@@ -43,29 +40,21 @@ class Main extends React.Component{
     }
     _handleSubmit(e){
         e.preventDefault();
-        console.log("in submit",this.state.search_term);
         if(!this.state.search_term || /^\s*$/.test(this.state.search_term)) return;
-        console.log("in submit",this.state.search_term);
         this.setState({results:[],peopleAttending:[]});
         axios.post('/search',{search:this.state.search_term})
             .then((response)=>{
                 this.setState({results:response.data.businesses});
                 store.setUserEvents(response.data.businesses);
-                console.log("searchEvents",response.data);
             });
-       // if(store.getUser().isAuthenticated){
             axios.post('/getEvents',{search:this.state.search_term})
             .then((response)=>{
                 this.setState({peopleAttending:(response.data.length) ? response.data : []});
                 store.setOthersEvents(response.data);
-                console.log("getEvents",response.data);
             });
-        //}
-        //.post('/getEvents',{search:this.state.search})
     }
     render(){
         let people,peopleAttending=this.state.peopleAttending;
-        console.log("rendering");
         if(this.state.results.length){
             var data=this.state.results.map((item,index)=>{
                    people=this.state.peopleAttending.filter((x)=>{

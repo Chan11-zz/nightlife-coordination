@@ -17,17 +17,12 @@ import {browserHistory} from 'react-router';
     };
   }
 
-  componentWillMount(){
-    console.log("List will mount",store.getUser());
-  }
-
   _handleAttend(e){
     if(!this.state.isAuthenticated){
       browserHistory.push('/login');
       return ;
     }
     this.setState({isClicked:!this.state.isClicked});
-    console.log(e.target.value,this.state.isClicked);
     this.setState({ppl:this.state.ppl+1});
     axios.post('/eventsAdd',{events:e.target.value})
          .then((response)=>{
@@ -37,7 +32,6 @@ import {browserHistory} from 'react-router';
 
   _handleUndo(e){
     this.setState({isClicked:!this.state.isClicked});
-    console.log(e.target.value,this.state.isClicked);
     this.setState({ppl:this.state.ppl-1});
     axios.post('/eventsUndo',{events:e.target.value})
          .then((response)=>{

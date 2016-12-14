@@ -15,26 +15,16 @@ class Navigation extends React.Component{
     }
 
     componentWillMount(){
-       // console.log("")
-       console.log("Navigation will mount",store.getUser());
-        console.log( store.getUser().isAuthenticated);
-        store.getUser();
-        store.getUser();
-        store.getUser();
         this.setState({isAuthenticated: store.getUser().isAuthenticated});
     }
-    componentDidMount(){
-        console.log("Navigation mounted");
-    }
+
     _logout(e){
         e.preventDefault();
         localStorage.removeItem('tk');
-        console.log("removed tk");
         setAuth(false);
         store.emptyUser();
         this.setState({isAuthenticated : false});
-        console.log(store.getUser().isAuthenticated);
-        	browserHistory.push('/');
+        browserHistory.push('/');
     }
 
     render(){
@@ -43,7 +33,7 @@ class Navigation extends React.Component{
         });
 
         const authLinks=<Link className="mdl-navigation__link" to={`/`} onClick={this._logout.bind(this)}>Logout</Link>
-        
+
         return (
             <div id="headerdiv" className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header className="mdl-layout__header">

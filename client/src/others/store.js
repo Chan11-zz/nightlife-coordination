@@ -1,4 +1,4 @@
-let user,m=0;
+let user;
 class User {
     constructor(){
         this.id=null;
@@ -13,8 +13,6 @@ class User {
 var getUser=function getUser(){
     if(!user){
      user=new User();
-     m++;
-     console.log("user was created" + m + "times");
     }
         return user;
     };
@@ -35,7 +33,7 @@ var emptyUser=function emptyUser(){
     user.id=null;
     user.username=null;
     user.isAuthenticated=false;
-    user.events =null;   
+    user.events =null;
     user._handleLogout();
     };
 
@@ -45,33 +43,4 @@ export default {
         emptyUser : emptyUser,
         setUserEvents: setUserEvents,
         setOthersEvents: setOthersEvents
-}; 
-/*
-let user,empty="clear";
-class User {
-    constructor(data){
-        this.id=data.id;
-        this.username=data.username;
-        this.isAuthenticated=data.isAuthenticated;
-        this.events =[];
-    }
-}
-
-function createUser(data){
-    user = new User(data);
-    return user;
-}
-
-
-
-export default function getUser(data){
-    if(!user && !data){
-        console.log("userDetails updated to:",false);
-          return {isAuthenticated : false};
-    } else if(!user || data==={}) {
-            createUser(data); // if no user is created,then it creates one
-        } else {
-        return user; // if already created ,just returns user
-    }
-}
-*/
+};

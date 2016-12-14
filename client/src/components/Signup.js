@@ -19,7 +19,6 @@ class Signup extends React.Component{
 
      _handleChange(e){
         this.setState({[e.target.name]:e.target.value});
-        console.log(e.target.value);
     }
 
     _handleSubmit(e){
@@ -27,8 +26,6 @@ class Signup extends React.Component{
         this.setState({errors:{},submitted:true});
         axios.post('/signup',{users:this.state})
             .then((response)=>{
-                console.log(response);
-              //  this.setState({errors:response.data,submitted:false});
                 if(response.data.status){
                   browserHistory.push('/login');
                } else {
